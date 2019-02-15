@@ -1,8 +1,8 @@
 # StockMarketSearch
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/stock_market_search`. To experiment with that code, run `bin/console` for an interactive prompt.
+STOCK MARKET SEARCH 
 
-TODO: Delete this and the text above, and describe your gem
+This gem can be used for finding out stock market related information about a publicly traded company of the user's choice. When run, it prompts the user to enter a ticker symbol (for example: AAPL). It returns the company name (in this case: "Apple Inc.") and a list of options to choose from. Options include: current market price, company overview, view charts/buy or sell shares on Etrade, and exit.
 
 ## Installation
 
