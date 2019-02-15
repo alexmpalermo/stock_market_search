@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require './lib/stock_market_search'
+
+StockMarketSearch::CLI.new.call 
