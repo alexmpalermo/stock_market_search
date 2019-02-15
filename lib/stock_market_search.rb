@@ -1,6 +1,4 @@
-require "stock_market_search/version"
+require_relative "./stock_market_search/version"
+require_relative './stock_market_search/cli'
 
-module StockMarketSearch
-  class Error < StandardError; end
-  # Your code goes here...
-end
+
