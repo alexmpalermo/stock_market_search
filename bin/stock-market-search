@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
-require './lib/stock_market_search'
+
+require "bundler/setup"
+require "stock_market_search"
 
 StockMarketSearch::CLI.new.call 

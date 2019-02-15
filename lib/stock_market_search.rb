@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'pry'
+
 require_relative "./stock_market_search/version"
 require_relative './stock_market_search/cli'
 require_relative "./stock_market_search/company"
