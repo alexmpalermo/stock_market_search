@@ -1,0 +1,4 @@
+class StockMarketSearch::Scraper
+  
+  
+end 
