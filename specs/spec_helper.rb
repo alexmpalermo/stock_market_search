@@ -1,0 +1,8 @@
+require_relative "../lib/scraper.rb"
+require_relative "../lib/company.rb"
+require 'nokogiri'
+
+RSpec.configure do |config|
+  config.expect_with :rspec do |expectations|
+     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
+  end

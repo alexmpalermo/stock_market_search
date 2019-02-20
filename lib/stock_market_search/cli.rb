@@ -5,10 +5,8 @@ class StockMarketSearch::CLI
     input = gets.strip
     url = input_url(input)
     StockMarketSearch::Company.new_by_url(url)
-    
     puts "You have chosen: "StockMarketSearch::Company.name
-    
-  choose until input == "4"
+    choose until input == "4"
     
   end
 
