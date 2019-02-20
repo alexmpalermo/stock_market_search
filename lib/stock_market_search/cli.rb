@@ -6,8 +6,8 @@ class StockMarketSearch::CLI
     url = input_url(input)
     StockMarketSearch::Company.new_by_url(url)
     
-    #pick
-    #choose until input == "4"
+    pick
+    choose
     
   end
 
