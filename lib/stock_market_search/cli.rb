@@ -35,7 +35,6 @@ class StockMarketSearch::CLI
       puts "The current market price is: "StockMarketSearch::Company.price
     elsif input == "2"
       puts "Overview: "StockMarketSearch::Company.overview 
-      puts "Headquarters: "StockMarketSearch::Company.location
       puts "Website: "StockMarketSearch::Company.website
     elsif input == "3"
       puts "Charts link: "StockMarketSearch::Company.charts_url
