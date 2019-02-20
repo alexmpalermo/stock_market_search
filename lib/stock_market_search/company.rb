@@ -1,7 +1,7 @@
 class StockMarketSearch::Company
   
   
-  attr_accessor :name, :overview, :website, :price, :charts_url
+  attr_accessor :name, :overview, :website, :price, :etrade_url
   
   def new_by_url(url)
     self.new(url).tap do |company|

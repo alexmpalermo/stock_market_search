@@ -37,7 +37,7 @@ class StockMarketSearch::CLI
       puts "Overview: "StockMarketSearch::Company.overview 
       puts "Website: "StockMarketSearch::Company.website
     elsif input == "3"
-      puts "Charts link: "StockMarketSearch::Company.charts_url
+      puts "Charts link: "StockMarketSearch::Company.etrade_url
     elsif input == "4"
   else 
     "Invalid number. Please choose a number 1-4."
