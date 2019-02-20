@@ -10,7 +10,7 @@ class StockMarketSearch::Scraper
       :price => doc.search("span.36276_0").text 
       :charts_url => doc.search("div.quotedetail fLeft a").first["href"]
     }
-    
+    company_hash
   end
   
 end 
