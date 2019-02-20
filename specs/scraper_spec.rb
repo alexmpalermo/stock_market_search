@@ -8,6 +8,15 @@ describe "Scraper" do
                             :price=>"$170.87",
                             :etrade_url=>
   "https://www.etrade.wallst.com/v1/stocks/snapshot/snapshot.asp?symbol=aapl"}}
+  
+  describe "#scrape_url" do
+    it "is a class method that scrapes a company's Etrade page and returns a hash of attributes describing an individual company" do
+      url = "https://www.etrade.wallst.com/v1/stocks/snapshot/snapshot.asp?symbol=aapl"
+      scraped_company = Scraper.scrape_url(url)
+      expect(scraped_company).to be_a(Hash)
+      expect(scraped_company).to match(apple_hash)
+    end
+  end 
 
   
   
