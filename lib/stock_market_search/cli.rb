@@ -4,6 +4,8 @@ class StockMarketSearch::CLI
     puts "Welcome to Stock Market Search!"
     puts "Please enter a ticker symbol (e.g. MCD)"
     input = gets.strip
+    input_url(input)
+    puts "You have chosen: "StockMarketSearch::Company.name 
     
   end 
   

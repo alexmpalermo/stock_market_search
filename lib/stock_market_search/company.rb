@@ -7,4 +7,8 @@ class StockMarketSearch::Company
     end
   end 
   
+  def new_by_url(url)
+    company = self.new(url)
+  end
+  
 end
