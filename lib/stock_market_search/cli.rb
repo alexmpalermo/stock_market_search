@@ -18,7 +18,7 @@ class StockMarketSearch::CLI
   choose until input == "4"
     
   end
-end 
+
     
   
   def input_url(input)
@@ -43,11 +43,11 @@ end
     choices 
     input= gets.strip
     if input == "1"
-      puts "Market Price: "StockMarketSearch::Company.price
+      puts "The current market price is: "StockMarketSearch::Company.price
     elsif input == "2"
       puts "Overview: "StockMarketSearch::Company.overview 
-      puts "Location: "StockMarketSearch::Company.location
-      puts "Website url: "StockMarketSearch::Company.website
+      puts "Headquarters: "StockMarketSearch::Company.location
+      puts "Website: "StockMarketSearch::Company.website
     elsif input == "3"
       puts "Charts link: "StockMarketSearch::Company.charts_url
     elsif input == "4"
