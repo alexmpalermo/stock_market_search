@@ -1,7 +1,7 @@
 class StockMarketSearch::Company
   
   
-  attr_accessor :name, :overview, :location, :website, :ticker, :price, :charts_url
+  attr_accessor :name, :overview, :location, :website, :price, :charts_url
   
   def initialize(scraped_hash)
     scraped_hash.each do |k,v|
@@ -10,7 +10,8 @@ class StockMarketSearch::Company
   end 
   
   def new_by_url(url)
-    company = self.new(url)
+    self.new(url).tap do |company|
+    end 
   end
   
 end

@@ -1,16 +1,9 @@
 class StockMarketSearch::CLI 
   
   def call 
-    puts "Welcome to Stock Market Search!"
-    puts "Please enter a ticker symbol (e.g. MCD)"
+    welcome 
     input = gets.strip
-    
-    company_hash = {
-      :ticker => input 
-    }
-    
-    url = "https://www.etrade.wallst.com/v1/stocks/snapshot/snapshot.asp?symbol=#{input}" if input.match(/[a-zA-Z]/)
-    
+    url = input_url(input)
     StockMarketSearch::Company.new_by_url(url)
     
     puts "You have chosen: "StockMarketSearch::Company.name
@@ -19,17 +12,15 @@ class StockMarketSearch::CLI
     
   end
 
-    
+    def welcome 
+    puts "Welcome to Stock Market Search!"
+    puts "Please enter a ticker symbol (e.g. MCD)"
+  end 
   
   def input_url(input)
-    if input.match(/[a-zA-Z]/)
-    url = "https://www.etrade.wallst.com/v1/stocks/snapshot/snapshot.asp?symbol=#{input}"
-  else 
-  puts "The system doesn't recognize that, please enter a ticker symbol (e.g. MCD)"
-  input = gets.strip
-  
-end
-end 
+   url = "https://www.etrade.wallst.com/v1/stocks/snapshot/snapshot.asp?symbol=#{input}" if input.match(/[a-zA-Z]/)
+   url 
+ end 
 
   def choices
     puts "What would you like to do? Please choose a number 1-4."
