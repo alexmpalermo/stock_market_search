@@ -4,8 +4,9 @@ class StockMarketSearch::CLI
     welcome 
     input = gets.strip
     url = input_url(input)
-    StockMarketSearch::Company.new_by_url(url)
-    pick
+    new_company = StockMarketSearch::Company.new_by_url(url)
+    puts "You have chosen: #{new_company.name}"
+    #pick
     choose 
     
   end
@@ -21,7 +22,7 @@ class StockMarketSearch::CLI
  end 
  
  def pick 
-   puts "You have chosen: "StockMarketSearch::Company.name  
+   puts "You have chosen: #{company.name}"   
  end
 
   def choices
