@@ -5,9 +5,8 @@ class StockMarketSearch::Scraper
     #binding.pry 
     company_hash = {
       :name => doc.search("h1.company__name").text, 
-      #:overview => doc.search("p.description__text").text,
-      #:location => doc.search("span.fRight").text,
-      #:website => doc.search("span.fRight a").first["href"],
+      :overview => doc.search("p.description__text").text.strip,
+      :price_update => doc.search("div.intraday__timestamp").text,
       :price => doc.search("h3.intraday__price bg-quote").text,
       :mktwatch_url => url
     }

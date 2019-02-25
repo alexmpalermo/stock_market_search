@@ -33,14 +33,12 @@ class StockMarketSearch::CLI
     input= gets.strip
     if input == "1"
       puts ""
-      puts "The current market price is #{new_company.price}."
-      puts ""
+      puts "The current market price is $#{new_company.price}."
+      puts "#{new_company.price_update}"
       choose(new_company)
     elsif input == "2"
       puts ""
       puts "Overview: #{new_company.overview}"
-      puts ""
-      puts "Website: #{new_company.website}" 
       puts ""
       choose(new_company)
     elsif input == "3"
