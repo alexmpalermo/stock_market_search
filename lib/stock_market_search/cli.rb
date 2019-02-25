@@ -5,8 +5,7 @@ class StockMarketSearch::CLI
     input = gets.strip
     url = input_url(input)
     new_company = StockMarketSearch::Company.new_by_url(url)
-    puts "You have chosen: APPLE INC"
-    #pick
+    pick
     choose 
     
   end
@@ -38,20 +37,29 @@ class StockMarketSearch::CLI
     input= gets.strip
     if input == "1"
       puts ""
-      puts "The current market price is "     #StockMarketSearch::Company.price
+      puts "The current market price is #{new_company.price}."
       puts ""
       choose
     elsif input == "2"
+      puts ""
       puts "Overview: #{new_company.overview}"
-      puts "Website: "      #StockMarketSearch::Company.website
+      puts ""
+      puts "Website: #{new_company.website}" 
+      puts ""
       choose
     elsif input == "3"
-      puts "Charts link: "     #StockMarketSearch::Company.etrade_url
+      puts ""
+      puts "Charts link: #{new_company.charts_url}"  
+      puts ""
       choose
     elsif input == "4"
+    puts ""
     puts "Goodbye"
+    puts ""
   else 
+    puts ""
     puts "Invalid number. Please choose a number 1-4."
+    puts ""
     choose
   end 
 end 
