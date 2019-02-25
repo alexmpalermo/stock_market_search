@@ -6,7 +6,7 @@ class StockMarketSearch::CLI
     url = input_url(input)
     new_company = StockMarketSearch::Company.new_by_url(url)
     puts "You have chosen: #{new_company.name}"
-    choose 
+    choose(new_company) 
     
   end
 
@@ -29,26 +29,26 @@ class StockMarketSearch::CLI
     puts "4. Exit"
   end 
   
-  def choose
+  def choose(new_company)
     choices 
     input= gets.strip
     if input == "1"
       puts ""
       puts "The current market price is #{new_company.price}."
       puts ""
-      choose
+      choose(new_company)
     elsif input == "2"
       puts ""
       puts "Overview: #{new_company.overview}"
       puts ""
       puts "Website: #{new_company.website}" 
       puts ""
-      choose
+      choose(new_company)
     elsif input == "3"
       puts ""
       puts "Charts link: #{new_company.charts_url}"  
       puts ""
-      choose
+      choose(new_company)
     elsif input == "4"
     puts ""
     puts "Goodbye"
@@ -57,7 +57,7 @@ class StockMarketSearch::CLI
     puts ""
     puts "Invalid number. Please choose a number 1-4."
     puts ""
-    choose
+    choose(new_company)
   end 
 end 
     

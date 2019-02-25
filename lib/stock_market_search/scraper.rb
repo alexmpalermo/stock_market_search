@@ -7,7 +7,7 @@ class StockMarketSearch::Scraper
       #:overview => doc.search("div.lh18").text,
       #:location => doc.search("span.fRight").text,
       #:website => doc.search("span.fRight a").first["href"],
-      #:price => doc.search("span.36276_0").text,
+      :price => doc.search("bg_quote.value positive").text,
       :etrade_url => url
     }
     company_hash
