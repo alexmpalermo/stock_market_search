@@ -2,7 +2,7 @@ class StockMarketSearch::Scraper
   
   def self.scrape_url(url)
     doc = Nokogiri::HTML(open(url))
-    binding.pry 
+    #binding.pry 
     company_hash = {
       :name => doc.search("h1.company__name").text, 
       :overview => overview = doc.search('p.description__text> text()').text.strip,

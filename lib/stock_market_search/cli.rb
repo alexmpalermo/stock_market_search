@@ -24,7 +24,7 @@ class StockMarketSearch::CLI
     puts "What would you like to do? Please choose a number 1-4."
     puts "1. View current market price"
     puts "2. Company overview"
-    puts "3. View charts/buy or sell shares on Etrade"
+    puts "3. View full information and charts on MarketWatch"
     puts "4. Exit"
   end 
   
@@ -43,7 +43,8 @@ class StockMarketSearch::CLI
       choose(new_company)
     elsif input == "3"
       puts ""
-      puts "Charts link: #{new_company.charts_url}"  
+      puts "Please copy and paste the url below into your browser:"  
+      puts "#{new_company.mktwatch_url}"
       puts ""
       choose(new_company)
     elsif input == "4"
