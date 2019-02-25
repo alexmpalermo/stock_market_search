@@ -5,7 +5,7 @@ class StockMarketSearch::CLI
     input = gets.strip
     url = input_url(input)
     new_company = StockMarketSearch::Company.new_by_url(url)
-    pick
+    puts "You have chosen: #{new_company.name}"
     choose 
     
   end
@@ -16,13 +16,10 @@ class StockMarketSearch::CLI
   end 
   
   def input_url(input)
-   url = "https://www.etrade.wallst.com/v1/stocks/snapshot/snapshot.asp?symbol=#{input}" if input.match(/[a-zA-Z]/)
+    url = "https://www.marketwatch.com/investing/stock/#{input}" if input.match(/[a-zA-Z]/)
+   #url = "https://www.etrade.wallst.com/v1/stocks/snapshot/snapshot.asp?symbol=#{input}" if input.match(/[a-zA-Z]/)
    url 
  end 
- 
- def pick 
-   puts "You have chosen: #{new_company.name}"   
- end
 
   def choices
     puts "What would you like to do? Please choose a number 1-4."
