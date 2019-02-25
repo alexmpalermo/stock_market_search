@@ -5,9 +5,13 @@ class StockMarketSearch::CLI
     input = gets.strip
     url = input_url(input)
     new_company = StockMarketSearch::Company.new_by_url(url)
+    if new_company.name == ""
+      puts "The system is unable to find a company under that symbol, please enter a new one."
+      call 
+    else 
     puts "You have chosen: #{new_company.name}"
     choose(new_company) 
-    
+   end 
   end
 
     def welcome 
