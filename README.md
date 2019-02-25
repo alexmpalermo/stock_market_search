@@ -2,7 +2,7 @@
 
 STOCK MARKET SEARCH 
 
-This gem can be used for finding out stock market related information about a publicly traded company of the user's choice. When run, it prompts the user to enter a ticker symbol (for example: AAPL). It returns the company name (in this case: "Apple Inc.") and a list of options to choose from. Options include: current market price, company overview, view charts/buy or sell shares on Etrade, and exit.
+This gem can be used for finding out stock market related information about a publicly traded company of the user's choice. When run, it prompts the user to enter a ticker symbol (for example: AAPL). It returns the company name (in this case: "Apple Inc.") and a list of options to choose from. Options include: current market price, company overview, view full information and charts on MarketWatch, and exit.
 
 ## Installation
 
