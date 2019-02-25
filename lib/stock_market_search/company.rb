@@ -1,7 +1,7 @@
 class StockMarketSearch::Company
   
   
-  attr_accessor :name, :overview, :website, :price, :etrade_url
+  attr_accessor :name, :overview, :website, :price, :mktwatch_url
   
   def initialize(url)
     company_hash = StockMarketSearch::Scraper.scrape_url(url)

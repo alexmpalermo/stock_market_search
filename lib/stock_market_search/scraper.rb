@@ -9,7 +9,7 @@ class StockMarketSearch::Scraper
       #:location => doc.search("span.fRight").text,
       #:website => doc.search("span.fRight a").first["href"],
       :price => doc.search("h3.intraday__price bg-quote").text,
-      :etrade_url => url
+      :mktwatch_url => url
     }
     company_hash
   end

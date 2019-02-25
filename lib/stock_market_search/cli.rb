@@ -17,7 +17,6 @@ class StockMarketSearch::CLI
   
   def input_url(input)
     url = "https://www.marketwatch.com/investing/stock/#{input}" if input.match(/[a-zA-Z]/)
-   #url = "https://www.etrade.wallst.com/v1/stocks/snapshot/snapshot.asp?symbol=#{input}" if input.match(/[a-zA-Z]/)
    url 
  end 
 
