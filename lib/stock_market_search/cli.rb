@@ -4,7 +4,7 @@ class StockMarketSearch::CLI
     welcome 
     input = gets.strip
     url = input_url(input)
-    new_company = StockMarketSearch::Company.new_by_url(url)
+    new_company = StockMarketSearch::Company.new(url)
     if new_company.name == ""
       puts "The system is unable to find a company under that symbol, please enter a new one."
       call 
@@ -29,7 +29,9 @@ class StockMarketSearch::CLI
     puts "1. View current market price"
     puts "2. Company overview"
     puts "3. View full information and charts on MarketWatch"
-    puts "4. Exit"
+    puts "4. Pick a new company"
+    puts "5. List all companies searched"
+    puts "6. Exit"
   end 
   
   def choose(new_company)
@@ -51,17 +53,27 @@ class StockMarketSearch::CLI
       puts "#{new_company.mktwatch_url}"
       puts ""
       choose(new_company)
-    elsif input == "4"
+     elsif input == "4"
+     call 
+     elsif input == "5"
+     companies = StockMarketSearch::Company.all
+     companies.each do |company|
+       puts ""
+       puts "#{company.name}"
+       puts ""
+     end 
+     choose(new_company)
+    elsif input == "6"
     puts ""
     puts "Goodbye"
     puts ""
   else 
     puts ""
-    puts "Invalid number. Please choose a number 1-4."
+    puts "Invalid number. Please choose a number 1-6."
     puts ""
     choose(new_company)
   end 
 end 
-    
-  
+
 end
+  
